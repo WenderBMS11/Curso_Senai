@@ -40,10 +40,12 @@ public class Cliente implements Serializable {
 	private Set<String> telefones = new HashSet<>();
 
 	// ----Relacionamento das classes(Cliente e Endereço)----
-	@OneToMany// <-indica o tipo do relacionamento(um para muitos)
+
 	// cascade é para: se excluir cliente, o endereço tbm é excluido
-	(mappedBy = "cliente", cascade = CascadeType.ALL)
+
 	// ^-salvo tudo que foi pegado na linha acima em uma lista-v
+	@OneToMany// <-indica o tipo do relacionamento(um para muitos)
+	(mappedBy = "cliente", cascade = CascadeType.ALL)
 	private List<Endereco> enderecos = new ArrayList<>();
 	// -----------------------------------------------------
 
